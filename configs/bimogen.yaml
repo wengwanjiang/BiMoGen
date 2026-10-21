@@ -1,0 +1,53 @@
+model:
+  backbone: llada
+  tokenizer: checkpoints/bimogen-85000/tokenizer
+  llada_d_model: 1024
+  llada_n_heads: 16
+  llada_n_layers: 20
+  llada_mlp_hidden_size: 3072
+  dropout: 0.0
+vqvae:
+  checkpoint: deps/motiongpt/motiongpt_s3_h3d.tar
+data:
+  data_root: datasets/HumanML3D
+  nfeats: 263
+  fps: 20
+  min_motion_length: 40
+  mean_path: deps/t2m/t2m/VQVAEV3_CB1024_CMT_H1024_NRES3/meta/mean.npy
+  std_path: deps/t2m/t2m/VQVAEV3_CB1024_CMT_H1024_NRES3/meta/std.npy
+  num_workers: 0
+  max_text_len: 50
+training:
+  output_dir: output/bimogen
+  batch_size: 32
+  gradient_accumulation_steps: 1
+  mixed_precision: bf16
+  weight_decay: 0.01
+  gradient_clip: 1.0
+  seed: 42
+  log_every: 100
+  save_every: 5000
+pretrain:
+  epochs: 200
+  lr: 0.0002
+  warmup_steps: 2000
+sft:
+  epochs: 500
+  lr: 8.0e-05
+  warmup_steps: 2000
+task:
+  weights:
+  - 0.8
+  - 0.1
+  - 0.1
+  cfg_prob: 0.1
+  pad_loss_weight: 0.1
+  m2m_inbetween_prob: 0.5
+gasc:
+  weight: 1.0
+  min_t: 0.1
+  use_t_weighting: true
+ema:
+  enabled: true
+  decay: 0.9999
+vq_mode: frame

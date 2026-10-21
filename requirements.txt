@@ -1,0 +1,10 @@
+torch>=2.2
+numpy>=1.24
+transformers==4.38.0
+accelerate>=1.0,<2
+PyYAML>=6
+tqdm>=4.66
+scipy>=1.10
+spacy>=3.7
+pycocoevalcap>=1.2
+bert-score>=0.3.13

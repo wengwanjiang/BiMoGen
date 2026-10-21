@@ -1,0 +1,4 @@
+60 A person kicks his left leg.
+A person walks forward.
+73 A person save his left hand.
+He walks backward.
