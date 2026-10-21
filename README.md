@@ -1,7 +1,7 @@
 <div align="center">
 
 <h1>BiMoGen</h1>
-<h3>Bidirectional Motion-Text Generation<br>via Unified Masked Discrete Diffusion</h3>
+<h3>Bidirectional Motion-Text Generation via Unified Masked Discrete Diffusion</h3>
 
 <p>
   <a href="https://wengwanjiang.github.io/">Wanjiang Weng</a><sup>1,*</sup>&emsp;
@@ -22,11 +22,12 @@
   <sup>&dagger;</sup>Corresponding author
 </p>
 
-<!-- Fill in HUGGINGFACE_URL. -->
 <p>
   <a href="https://neurips.cc/virtual/2026/loc/atlanta/poster/152019"><img src="https://img.shields.io/badge/NeurIPS-2026-6842C2?style=flat-square" alt="NeurIPS 2026"></a>
   <a href="https://wengwanjiang.github.io/BiMoGen-Page/"><img src="https://img.shields.io/badge/Project-Web-4A90D9?style=flat-square&amp;logo=googlechrome&amp;logoColor=white" alt="Project Web"></a>
+  <!-- TODO: uncomment once the model is on Hugging Face
   <a href="HUGGINGFACE_URL"><img src="https://img.shields.io/badge/HuggingFace-FFD21E?style=flat-square&amp;logo=huggingface&amp;logoColor=black" alt="Hugging Face"></a>
+  -->
   <a href="https://github.com/wengwanjiang/BiMoGen"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub"></a>
   <a href="https://arxiv.org/abs/2609.35407"><img src="https://img.shields.io/badge/arXiv-B31B1B?style=flat-square&amp;logo=arxiv&amp;logoColor=white" alt="arXiv"></a>
 </p>
@@ -37,7 +38,7 @@
   <a href="#-data-preparation">Data Preparation</a> &nbsp;·&nbsp;
   <a href="#-training">Training</a> &nbsp;·&nbsp;
   <a href="#-evaluation">Evaluation</a> &nbsp;·&nbsp;
-  <a href="#citation">Citation</a>
+  <a href="#-citation">Citation</a>
 </p>
 
 </div>
@@ -149,7 +150,7 @@ The checkpoint is saved to `deps/motiongpt/motiongpt_s3_h3d.tar`. Evaluator asse
 
 </details>
 
-## 🗂️ Data Preparation
+## 📂 Data Preparation
 
 <details>
 <summary>HumanML3D and motion token encoding</summary>
@@ -189,7 +190,7 @@ datasets/HumanML3D/motiongpt_vq_codes_test.pt
 
 </details>
 
-## 🏋️ Training
+## 🚀 Training
 
 <details>
 <summary>Pretraining and instruction tuning</summary>
@@ -240,11 +241,11 @@ python -m evaluation.eval_m2t \
 
 </details>
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 We thank [LLaDA](https://github.com/ML-GSAI/LLaDA), [MotionGPT](https://github.com/OpenMotionLab/MotionGPT), [HumanML3D](https://github.com/EricGuo5513/HumanML3D), [pycocoevalcap](https://github.com/salaniz/pycocoevalcap), and [BERTScore](https://github.com/Tiiiger/bert_score) for their open-source contributions.
 
-## Citation
+## 📖 Citation
 
 ```bibtex
 @inproceedings{weng2026bimogen,
